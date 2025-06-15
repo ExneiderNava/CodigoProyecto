@@ -47,4 +47,3 @@ public class Proyecto {
 
 //crear formulario para ingresar los usuarios
 //crear sistema de autenticación para los usuarios
-//arreglar resolución del logo

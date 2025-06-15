@@ -26,9 +26,9 @@ public class InicioDeSeccion extends javax.swing.JFrame {
 
         Fondo = new javax.swing.JPanel();
         Tx_codigoUsuario = new javax.swing.JLabel();
-        TF_IngresarCodigo = new javax.swing.JTextField();
         bt_ingresar = new javax.swing.JButton();
         logo = new javax.swing.JLabel();
+        ps_codigo = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -40,13 +40,17 @@ public class InicioDeSeccion extends javax.swing.JFrame {
         Tx_codigoUsuario.setText("Código de usuario");
         Tx_codigoUsuario.setToolTipText("");
 
-        TF_IngresarCodigo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        TF_IngresarCodigo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        TF_IngresarCodigo.setBorder(null);
-
         bt_ingresar.setText("Ingresar");
+        bt_ingresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_ingresarMouseClicked(evt);
+            }
+        });
 
         logo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Usuario\\Desktop\\Proyecto Ebenezer\\LOGO-EBENEZER-final-20141.png")); // NOI18N
+
+        ps_codigo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        ps_codigo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         javax.swing.GroupLayout FondoLayout = new javax.swing.GroupLayout(Fondo);
         Fondo.setLayout(FondoLayout);
@@ -56,9 +60,9 @@ public class InicioDeSeccion extends javax.swing.JFrame {
                 .addContainerGap(319, Short.MAX_VALUE)
                 .addGroup(FondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(Tx_codigoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 459, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TF_IngresarCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 392, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bt_ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ps_codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 392, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(268, 268, 268))
         );
         FondoLayout.setVerticalGroup(
@@ -68,9 +72,9 @@ public class InicioDeSeccion extends javax.swing.JFrame {
                 .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Tx_codigoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(TF_IngresarCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(56, 56, 56)
+                .addGap(18, 18, 18)
+                .addComponent(ps_codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(54, 54, 54)
                 .addComponent(bt_ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(184, Short.MAX_VALUE))
         );
@@ -92,13 +96,27 @@ public class InicioDeSeccion extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void bt_ingresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_ingresarMouseClicked
+        
+        String codigo = new String(ps_codigo.getPassword());
+        
+        if (codigo.equals("Xre65g")){
+            try {
+                java.awt.Desktop.getDesktop().browse(new java.net.URI("https://forms.office.com/Pages/DesignPageV2.aspx?origin=shell"));
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+            
+    }//GEN-LAST:event_bt_ingresarMouseClicked
+
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Fondo;
-    private javax.swing.JTextField TF_IngresarCodigo;
     private javax.swing.JLabel Tx_codigoUsuario;
     private javax.swing.JButton bt_ingresar;
     private javax.swing.JLabel logo;
+    private javax.swing.JPasswordField ps_codigo;
     // End of variables declaration//GEN-END:variables
 }
