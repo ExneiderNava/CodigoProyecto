@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/edt_redondeado"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="24dp"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/txt_metodo_digital"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Consgine a la cuenta"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:paddingBottom="16dp"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/edt_nombre_titular"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:hint="Colegio Ebenezer"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:padding="8dp"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/edt_referencia_pago"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:hint="400-00-00"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:padding="8dp"
+        android:layout_marginTop="12dp"
+        android:textColor="@android:color/black"/>
+
+    <Button
+        android:id="@+id/btn_confirmar_pago_digital"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Listo"
+        android:background="@drawable/edt_redondeado"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#4CAF50"
+        android:textColor="@android:color/white"/>
+</LinearLayout>
