@@ -94,6 +94,31 @@ class Producto {
     return true;
 }
 
+
+// se invluye esta funcion para guardar los cambios del producto editado
+public function editar($datos) {
+    $sql = "UPDATE productos 
+            SET Nombre_Producto = :nombre,
+                Precio_venta = :venta,
+                Precio_costo = :costo,
+                Cantidad_en_Stock = :cantidad,
+                Tipo_Producto = :tipo
+            WHERE Id_Producto = :id";
+
+    $stmt = $this->db->prepare($sql);
+
+    $params = [
+        ':id' => $datos['Id_Producto'],
+        ':nombre' => $datos['Nombre_Producto'],
+        ':venta' => $datos['Precio_venta'],
+        ':costo' => $datos['Precio_costo'],
+        ':cantidad' => $datos['Cantidad_en_Stock'],
+        ':tipo' => $datos['Tipo_Producto']
+    ];
+
+    return $stmt->execute($params);
+}
+
 }
 
 ?>
