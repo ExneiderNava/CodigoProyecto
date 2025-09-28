@@ -37,7 +37,7 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/edt_redondeado"
         android:hint="Ingrese su código"
-        android:inputType="textPassword"
+        android:inputType="numberPassword"
         android:textAlignment="center"
         android:textSize="22sp"
         android:elevation="20dp"/>
@@ -51,5 +51,7 @@
         android:background="@drawable/button_ingresar"
         android:textSize="20sp"
         android:layout_marginTop="30dp"
-        android:elevation="20dp"/>
+        android:elevation="20dp" />
+
+
 </LinearLayout>

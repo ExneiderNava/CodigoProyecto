@@ -8,6 +8,7 @@
     android:layout_marginHorizontal="6dp"
     android:layout_marginVertical="12dp">
 
+
     <ImageView
         android:id="@+id/img_producto"
         android:layout_width="120dp"

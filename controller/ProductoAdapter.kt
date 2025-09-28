@@ -7,13 +7,15 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.proyecto_ebenezer.R
 import com.example.proyecto_ebenezer.model.getproductos_prueba
 
 class ProductoAdapter(
     private val context: Context,
-    private val listaProductos: List<getproductos_prueba>
+    private val listaProductos: List<getproductos_prueba>,
+    private val listener: onCantidadChangeListener
 ) : RecyclerView.Adapter<ProductoAdapter.ProductoViewHolder>(){
 
     class ProductoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -34,15 +36,20 @@ class ProductoAdapter(
         val producto = listaProductos[position]
         var cantidadActual = producto.cantidad
 
-        holder.imagen.setImageResource(producto.imagen)
+        holder.imagen.setImageBitmap(producto.imagen)
         holder.nombre.text = producto.nombre
         holder.precio.text = "$${producto.precio}"
         holder.cantidad.text = cantidadActual.toString()
 
 
         holder.btnMas.setOnClickListener {
-            cantidadActual++
-            holder.cantidad.text = cantidadActual.toString()
+            if (cantidadActual < producto.stock) {
+                cantidadActual++
+                holder.cantidad.text = cantidadActual.toString()
+                listener.onCantidadChange(producto, cantidadActual)
+            } else {
+                Toast.makeText( context,"Producto agotado", Toast.LENGTH_SHORT).show()
+            }
         }
 
 
@@ -50,11 +57,16 @@ class ProductoAdapter(
             if (cantidadActual > 0) {
                 cantidadActual--
                 holder.cantidad.text = cantidadActual.toString()
+                listener.onCantidadChange(producto, cantidadActual)
             }
         }
     }
 
     override fun getItemCount(): Int {
         return listaProductos.size
+    }
+
+    interface onCantidadChangeListener {
+        fun onCantidadChange(producto: getproductos_prueba, nuevaCantidad: Int)
     }
     }
