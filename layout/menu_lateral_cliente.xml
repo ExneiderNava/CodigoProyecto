@@ -1,56 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
     android:background="#00000000"
     android:padding="16dp"
-    android:gravity="center_vertical">
+    android:gravity="center_horizontal">
 
     <!-- Cada botón/imagen es una categoría -->
     <ImageButton
         android:id="@+id/cat_snacks"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="50dp"
+        android:layout_height="39dp"
         android:src="@drawable/snacks"
+        android:scaleType="fitCenter"
         android:contentDescription="snacks"
         android:background="@android:color/transparent"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="10dp"/>
 
     <ImageButton
         android:id="@+id/cat_comidas"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="50dp"
+        android:layout_height="39dp"
         android:src="@drawable/comidas"
+        android:scaleType="fitCenter"
         android:contentDescription="comidas"
         android:background="@android:color/transparent"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="10dp"/>
 
     <ImageButton
         android:id="@+id/cat_bebidas"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="50dp"
+        android:layout_height="39dp"
         android:src="@drawable/bebidas"
+        android:scaleType="fitCenter"
         android:contentDescription="bebidas"
         android:background="@android:color/transparent"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="10dp"/>
 
     <ImageButton
         android:id="@+id/cat_postres"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="50dp"
+        android:layout_height="39dp"
         android:src="@drawable/postres"
+        android:scaleType="fitCenter"
         android:contentDescription="postres"
         android:background="@android:color/transparent"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="10dp"/>
 
     <ImageButton
         android:id="@+id/cat_otros"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="50dp"
+        android:layout_height="39dp"
         android:src="@drawable/otros"
+        android:scaleType="fitCenter"
         android:contentDescription="otros"
         android:background="@android:color/transparent"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="10dp"/>
 
 </LinearLayout>
